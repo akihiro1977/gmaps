@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>gmaps.js - example</title>
+<!-- vender -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- /vender -->
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&region=JP&key=AIzaSyAvwvNx1TCdNkWupjnYm1nWBDh-v663PJc&signed_in=false&sensor=false"></script>
+<script type="text/javascript" src="gmaps.js"></script>
+<script type="text/javascript">
+$(function(){
+	gMaps.markerIcon = {
+		url: './map-icon.png'
+	};
+	gMaps.mapOptions.styles[0].stylers = [
+											   { hue: "#00FF99" },
+											   { saturation: -40 }
+											   ];
+	gMaps.init($("[data-address]"));
+});
+</script>
+<style type="text/css">
+<!--
+.map-canvas {
+	margin: 10px;
+	height: 200px;
+	width: 600px;
+}
+-->
+</style>
+
+</head>
+<body>
+<div class="container">
+	<div class="map-canvas" data-address="東京スカイツリー"></div>
+	<div class="map-canvas" data-address="35.667480, 139.727275"></div>
+	<div class="map-canvas" data-address="福岡市中央区大名2丁目4−22" data-html="#akasaka"></div>
+	<div style="display:none;" id="akasaka"><h4>福岡市中央区大名2丁目4−22</h4><p>スタバがあるよ</p></div>
+</div>
+</body>
+</html>
